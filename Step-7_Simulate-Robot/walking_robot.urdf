@@ -1,0 +1,409 @@
+<?xml version="1.0"?>
+<robot name="quad_one_leg">
+
+  <!-- ========== BODY LINK (base_link) ========== -->
+  <link name="base_link">
+    <inertial>
+      <!-- COM of full base (acrylic + electronics + battery etc.) 
+          relative to base_link frame at plate mid-plane center -->
+      <origin xyz="0.0059 -0.00040 0.01206" rpy="0 0 0"/>
+
+      <!-- mass: 1268.5 g -->
+      <mass value="1.2685"/>
+
+      <!-- inertia tensor at COM (from SolidWorks, converted to kg·m^2) -->
+      <inertia
+        ixx="0.003092903"
+        ixy="1.0691e-05"
+        ixz="0.000192746"
+        iyy="0.010472619"
+        iyz="3.5222e-06"
+        izz="0.012174911"/>
+    </inertial>
+    <visual>
+        <!-- New mesh offset so that the desired body point becomes link origin -->
+        <origin xyz="-0.15 -0.08 -0.02094" rpy="0 0 0"/>
+        <geometry>
+            <mesh filename="body.STL" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </visual>
+
+    <collision>
+        <origin xyz="-0.15 -0.08 -0.02094" rpy="0 0 0"/>
+        <geometry>
+            <mesh filename="body.STL" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision>
+  </link>
+
+
+  <!-- ========== THIGH LINK (front-right) ========== -->
+  <link name="thigh_fr">
+    <inertial>
+      <!-- COM of thigh+servo+horn relative to hip joint frame -->
+      <origin xyz="0 -0.00033 -0.07263" rpy="0 0 0"/>
+
+      <!-- mass: 111.96 g -->
+      <mass value="0.11196"/>
+
+      <!-- inertia tensor at COM (converted from g·cm^2 to kg·m^2) -->
+      <inertia
+        ixx="0.011062438"
+        ixy="-1.6e-08"
+        ixz="5.3e-08"
+        iyy="0.010248068"
+        iyz="0.000102968"
+        izz="0.00203968"/>
+    </inertial>
+
+
+    <visual>
+      <origin xyz="-0.015 -0.02215 -0.1195" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="thigh.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="-0.015 -0.02215 -0.1195" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="thigh.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ========== THIGH LINK (front-left) ========== -->
+  <link name="thigh_fl">
+    <inertial>
+      <!-- COM of thigh+servo+horn relative to hip joint frame -->
+      <origin xyz="0 -0.00033 -0.07263" rpy="0 0 0"/>
+
+      <!-- mass: 111.96 g -->
+      <mass value="0.11196"/>
+
+      <!-- inertia tensor at COM (converted from g·cm^2 to kg·m^2) -->
+      <inertia
+        ixx="0.011062438"
+        ixy="-1.6e-08"
+        ixz="5.3e-08"
+        iyy="0.010248068"
+        iyz="0.000102968"
+        izz="0.00203968"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="-0.015 -0.02215 -0.1195" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="thigh.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="-0.015 -0.02215 -0.1195" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="thigh.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ========== THIGH LINK (back-right) ========== -->
+  <link name="thigh_br">
+    <inertial>
+      <!-- COM of thigh+servo+horn relative to hip joint frame -->
+      <origin xyz="0 -0.00033 -0.07263" rpy="0 0 0"/>
+
+      <!-- mass: 111.96 g -->
+      <mass value="0.11196"/>
+
+      <!-- inertia tensor at COM (converted from g·cm^2 to kg·m^2) -->
+      <inertia
+        ixx="0.011062438"
+        ixy="-1.6e-08"
+        ixz="5.3e-08"
+        iyy="0.010248068"
+        iyz="0.000102968"
+        izz="0.00203968"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="-0.015 -0.02215 -0.1195" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="thigh.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="-0.015 -0.02215 -0.1195" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="thigh.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ========== THIGH LINK (back-left) ========== -->
+  <link name="thigh_bl">
+    <inertial>
+      <!-- COM of thigh+servo+horn relative to hip joint frame -->
+      <origin xyz="0 -0.00033 -0.07263" rpy="0 0 0"/>
+
+      <!-- mass: 111.96 g -->
+      <mass value="0.11196"/>
+
+      <!-- inertia tensor at COM (converted from g·cm^2 to kg·m^2) -->
+      <inertia
+        ixx="0.011062438"
+        ixy="-1.6e-08"
+        ixz="5.3e-08"
+        iyy="0.010248068"
+        iyz="0.000102968"
+        izz="0.00203968"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="-0.015 -0.02215 -0.1195" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="thigh.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="-0.015 -0.02215 -0.1195" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="thigh.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ========== SHANK LINK (front-left) ========== -->
+  <link name="shank_fl">
+    <inertial>
+      <!-- COM relative to knee joint frame -->
+      <origin xyz="0.00406 -0.00208 -0.05257" rpy="0 0 0"/>
+
+      <!-- mass: 61.45 g -> 0.06145 kg -->
+      <mass value="0.06145"/>
+
+      <!-- inertia tensor at COM (converted from g·mm^2 to kg·m^2) -->
+      <inertia
+        ixx="7.200365e-05"
+        ixy="-1.96479e-06"
+        ixz="-1.181483e-05"
+        iyy="6.268079e-05"
+        iyz="8.8824e-07"
+        izz="1.96048e-05"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="-0.01775 -0.02925 -0.12" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="shank.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="-0.01775 -0.02925 -0.12" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="shank.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ========== SHANK LINK (front-right) ========== -->
+  <link name="shank_fr">
+    <inertial>
+      <!-- COM relative to knee joint frame -->
+      <origin xyz="0.00406 -0.00208 -0.05257" rpy="0 0 0"/>
+
+      <!-- mass: 61.45 g -> 0.06145 kg -->
+      <mass value="0.06145"/>
+
+      <!-- inertia tensor at COM (converted from g·mm^2 to kg·m^2) -->
+      <inertia
+        ixx="7.200365e-05"
+        ixy="-1.96479e-06"
+        ixz="-1.181483e-05"
+        iyy="6.268079e-05"
+        iyz="8.8824e-07"
+        izz="1.96048e-05"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="-0.01775 -0.02925 -0.12" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="shank.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="-0.01775 -0.02925 -0.12" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="shank.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ========== SHANK LINK (back-left) ========== -->
+  <link name="shank_bl">
+    <inertial>
+      <!-- COM relative to knee joint frame -->
+      <origin xyz="0.00406 -0.00208 -0.05257" rpy="0 0 0"/>
+
+      <!-- mass: 61.45 g -> 0.06145 kg -->
+      <mass value="0.06145"/>
+
+      <!-- inertia tensor at COM (converted from g·mm^2 to kg·m^2) -->
+      <inertia
+        ixx="7.200365e-05"
+        ixy="-1.96479e-06"
+        ixz="-1.181483e-05"
+        iyy="6.268079e-05"
+        iyz="8.8824e-07"
+        izz="1.96048e-05"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="-0.01775 -0.02925 -0.12" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="shank.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="-0.01775 -0.02925 -0.12" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="shank.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ========== SHANK LINK (back-right) ========== -->
+  <link name="shank_br">
+    <inertial>
+      <!-- COM relative to knee joint frame -->
+      <origin xyz="0.00406 -0.00208 -0.05257" rpy="0 0 0"/>
+
+      <!-- mass: 61.45 g -> 0.06145 kg -->
+      <mass value="0.06145"/>
+
+      <!-- inertia tensor at COM (converted from g·mm^2 to kg·m^2) -->
+      <inertia
+        ixx="7.200365e-05"
+        ixy="-1.96479e-06"
+        ixz="-1.181483e-05"
+        iyy="6.268079e-05"
+        iyz="8.8824e-07"
+        izz="1.96048e-05"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="-0.01775 -0.02925 -0.12" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="shank.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="-0.01775 -0.02925 -0.12" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="shank.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ========== HIP JOINT (base_link -> thigh_fr) ========== -->
+  <joint name="hip_fr" type="revolute">
+    <parent link="base_link"/>
+    <child  link="thigh_fr"/>
+
+    <origin xyz="0.1163 -0.059 -0.0120" rpy="0 0 0"/>
+
+    <axis xyz="0 1 0"/>
+
+    <limit lower="-1.22" upper="1.22" effort="1.91" velocity="5.5"/>
+  </joint>
+
+  <!-- ========== HIP JOINT (base_link -> thigh_fl) ========== -->
+  <joint name="hip_fl" type="revolute">
+    <parent link="base_link"/>
+    <child  link="thigh_fl"/>
+
+    <origin xyz="0.1163 0.061 -0.012" rpy="0 0 0"/>
+
+    <axis xyz="0 1 0"/>
+
+    <limit lower="-1.22" upper="1.22" effort="1.91" velocity="5.5"/>
+  </joint>
+
+  <!-- ========== HIP JOINT (base_link -> thigh_br) ========== -->
+  <joint name="hip_br" type="revolute">
+    <parent link="base_link"/>
+    <child  link="thigh_br"/>
+
+    <origin xyz="-0.1137 -0.0590 -0.0120" rpy="0 0 0"/>
+
+    <axis xyz="0 1 0"/>
+
+    <limit lower="-1.22" upper="1.22" effort="1.91" velocity="5.5"/>
+  </joint>
+
+  <!-- ========== HIP JOINT (base_link -> thigh_bl) ========== -->
+  <joint name="hip_bl" type="revolute">
+    <parent link="base_link"/>
+    <child  link="thigh_bl"/>
+
+    <origin xyz="-0.1137 0.0610 -0.0120" rpy="0 0 0"/>
+
+    <axis xyz="0 1 0"/>
+
+    <limit lower="-1.22" upper="1.22" effort="1.91" velocity="5.5"/>
+  </joint>
+
+  <!-- ========== KNEE JOINT (thigh_fl -> shank_fl) ========== -->
+  <joint name="knee_fl" type="revolute">
+    <parent link="thigh_fl"/>
+    <child  link="shank_fl"/>
+
+    <origin xyz="0 0 -0.1095" rpy="0 0 0"/>
+
+    <axis xyz="0 1 0"/>
+
+    <limit lower="-1.22" upper="1.22" effort="1.91" velocity="5.5"/>
+  </joint>
+
+  <!-- ========== KNEE JOINT (thigh_fr -> shank_fr) ========== -->
+  <joint name="knee_fr" type="revolute">
+    <parent link="thigh_fr"/>
+    <child  link="shank_fr"/>
+
+    <origin xyz="0 0 -0.1095" rpy="0 0 0"/>
+
+    <axis xyz="0 1 0"/>
+
+    <limit lower="-1.22" upper="1.22" effort="1.91" velocity="5.5"/>
+  </joint>
+
+  <!-- ========== KNEE JOINT (thigh_bl -> shank_bl) ========== -->
+  <joint name="knee_bl" type="revolute">
+    <parent link="thigh_bl"/>
+    <child  link="shank_bl"/>
+
+    <origin xyz="0 0 -0.1095" rpy="0 0 0"/>
+
+    <axis xyz="0 1 0"/>
+
+    <limit lower="-1.22" upper="1.22" effort="1.91" velocity="5.5"/>
+  </joint>
+
+  <!-- ========== KNEE JOINT (thigh_br -> shank_br) ========== -->
+  <joint name="knee_br" type="revolute">
+    <parent link="thigh_br"/>
+    <child  link="shank_br"/>
+
+    <origin xyz="0 0 -0.1095" rpy="0 0 0"/>
+
+    <axis xyz="0 1 0"/>
+
+    <limit lower="-1.22" upper="1.22" effort="1.91" velocity="5.5"/>
+  </joint>
+
+</robot>
